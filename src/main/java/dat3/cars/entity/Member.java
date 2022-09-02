@@ -45,4 +45,7 @@ public class Member extends UserWithRoles {
     this.city = city;
     this.zip = zip;
   }
+
+  public Member(int id, String brand, String model, double pricePrDay, double bestDiscount) {
+  }
 }
