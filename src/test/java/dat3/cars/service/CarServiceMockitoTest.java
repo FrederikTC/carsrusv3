@@ -47,7 +47,7 @@ class CarServiceMockitoTest {
 
 
     @Test
-    void addCar() throws Exception {
+    void addCar() {
         Car c = new Car(1, "1", "1", 1, 1);
         //If you wan't to do this for Car you have to manually set the id. REMEMBER there is NO real database
         Mockito.when(carRepository.save(any(Car.class))).thenReturn(c);
@@ -74,7 +74,7 @@ class CarServiceMockitoTest {
     }
 
     @Test
-    void findCarByIdThrowsTest() throws Exception {
+    void findCarByIdThrowsTest() {
         Mockito.when(carRepository.findById(1)).thenReturn(Optional.empty());
         //Test memberService throws with mocked repository
         ResponseStatusException ex = Assertions.assertThrows(ResponseStatusException.class, () -> carService.findCarById(1));
